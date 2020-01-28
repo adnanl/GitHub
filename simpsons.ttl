@@ -58,7 +58,8 @@ sim:Maggie fam:hasMother sim:Marge .
 sim:Abraham rdf:type foaf:Person .
 sim:Mona rdf:type foaf:Person .
 
-sim:Maggie fam:hasParent [] fam:hasFather sim:Abraham  .
+sim:Maggie fam:hasParent [];
+            fam:hasFather sim:Abraham  .
 
 sim:Maggie fam:hasParent [
     fam:hasMother sim:Mona ] .
