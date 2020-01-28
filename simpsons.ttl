@@ -83,7 +83,7 @@ sim:Lisa fam:hasParent [
 
 # Patty and Selma are sisters.
 sim:Patty fam:hasSister sim:Selma .
-sim:Selma fam:hasSister sim:Patty
+sim:Selma fam:hasSister sim:Patty .
 
 # Exercise 6
 sim:Abraham rdf:type foaf:Person .
