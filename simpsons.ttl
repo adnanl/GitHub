@@ -74,12 +74,10 @@ sim:Herb rdf:type foaf:Person .
 
 sim:Lisa fam:hasParent [
     fam:hasSister sim:Selma ;
-    fam:hasSister sim:Patty
-] .
+    fam:hasSister sim:Patty ] .
 
 sim:Lisa fam:hasParent [
-    fam:hasBrother sim:Herb
-] .
+    fam:hasBrother sim:Herb] .
 
 # Patty and Selma are sisters.
 sim:Patty fam:hasSister sim:Selma .
@@ -88,5 +86,4 @@ sim:Selma fam:hasSister sim:Patty .
 # Exercise 6
 sim:Abraham rdf:type foaf:Person .
 sim:Marge fam:hasSpouse [
-    fam:hasFather sim:Abraham
-] .
+    fam:hasFather sim:Abraham ] .
