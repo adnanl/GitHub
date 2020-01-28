@@ -35,11 +35,11 @@ sim:Maggie foaf:age "1"^^xsd:int .
 #The Simpsons is a family, and members of the family are Marge, Homer, Bart, Lisa and Maggie.
 
 sim:Simpsons rdf:type fam:Family .#;
-sim:Simpons fam:hasFamilyMember  sim:Marge .#,
-sim:Simpons fam:hasFamilyMember  sim:Homer .#,
-sim:Simpons fam:hasFamilyMember  sim:Bart .#,
-sim:Simpons fam:hasFamilyMember  sim:Lisa .#, 
-sim:Simpons fam:hasFamilyMember  sim:Maggie .
+sim:Simpsons fam:hasFamilyMember  sim:Marge .#,
+sim:Simpsons fam:hasFamilyMember  sim:Homer .#,
+sim:Simpsons fam:hasFamilyMember  sim:Bart .#,
+sim:Simpsons fam:hasFamilyMember  sim:Lisa .#, 
+sim:Simpsons fam:hasFamilyMember  sim:Maggie .
 
 #Marge and Homer are married, i.e, Marge is the spouse of Homer and Homer is the spouse of Marge
 sim:Homer fam:hasSpouse sim:Marge . #,
