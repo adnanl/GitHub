@@ -60,8 +60,7 @@ sim:Mona rdf:type foaf:Person .
 
 sim:Maggie fam:hasParent [ fam:hasFather sim:Abraham ] .
 
-sim:Maggie fam:hasParent [
-    fam:hasMother sim:Mona ] .
+sim:Maggie fam:hasParent [ fam:hasMother sim:Mona ] .
 
 # Exersies 5
 # Lisa has the aunts Patty and Selma and the uncle Herb
@@ -69,12 +68,10 @@ sim:Patty rdf:type foaf:Person .
 sim:Selma rdf:type foaf:Person .
 sim:Herb rdf:type foaf:Person .
 
-sim:Lisa fam:hasParent [
-    fam:hasSister sim:Selma ;
-    fam:hasSister sim:Patty ] .
+sim:Lisa fam:hasParent [ fam:hasSister sim:Selma ].
+sim:Lisa fam:hasParent [ fam:hasSister sim:Patty ].
 
-sim:Lisa fam:hasParent [
-    fam:hasBrother sim:Herb] .
+sim:Lisa fam:hasParent [ fam:hasBrother sim:Herb] .
 
 # Patty and Selma are sisters.
 sim:Patty fam:hasSister sim:Selma .
@@ -82,5 +79,4 @@ sim:Selma fam:hasSister sim:Patty .
 
 # Exercise 6
 sim:Abraham rdf:type foaf:Person .
-sim:Marge fam:hasSpouse [
-    fam:hasFather sim:Abraham ] .
+sim:Marge fam:hasSpouse [ fam:hasFather sim:Abraham ] .
