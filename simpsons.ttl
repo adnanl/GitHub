@@ -59,7 +59,6 @@ sim:Abraham rdf:type foaf:Person .
 sim:Mona rdf:type foaf:Person .
 
 sim:Maggie fam:hasParent [ fam:hasFather sim:Abraham ] .
-
 sim:Maggie fam:hasParent [ fam:hasMother sim:Mona ] .
 
 # Exersies 5
@@ -70,7 +69,6 @@ sim:Herb rdf:type foaf:Person .
 
 sim:Lisa fam:hasParent [ fam:hasSister sim:Selma ].
 sim:Lisa fam:hasParent [ fam:hasSister sim:Patty ].
-
 sim:Lisa fam:hasParent [ fam:hasBrother sim:Herb] .
 
 # Patty and Selma are sisters.
