@@ -59,12 +59,10 @@ sim:Abraham rdf:type foaf:Person .
 sim:Mona rdf:type foaf:Person .
 
 sim:Maggie fam:hasParent [
-    fam:hasFather sim:Abraham
-] .
+    fam:hasFather sim:Abraham ] .
 
 sim:Maggie fam:hasParent [
-    fam:hasMother sim:Mona
-] .
+    fam:hasMother sim:Mona ] .
 
 # Exersies 5
 # Lisa has the aunts Patty and Selma and the uncle Herb
