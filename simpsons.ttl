@@ -67,7 +67,7 @@ sim:Maggie fam:hasParent [
 ] .
 
 # Exersies 5
-# "Lisa has the aunts Patty and Selma and the uncle Herb. Patty and Selma are sisters."
+# Lisa has the aunts Patty and Selma and the uncle Herb
 sim:Patty rdf:type foaf:Person .
 sim:Selma rdf:type foaf:Person .
 sim:Herb rdf:type foaf:Person .
@@ -80,6 +80,10 @@ sim:Lisa fam:hasParent [
 sim:Lisa fam:hasParent [
     fam:hasBrother sim:Herb
 ] .
+
+# Patty and Selma are sisters.
+sim:Patty fam:hasSister sim:Selma .
+sim:Selma fam:hasSister sim:Patty
 
 # Exercise 6
 sim:Abraham rdf:type foaf:Person .
