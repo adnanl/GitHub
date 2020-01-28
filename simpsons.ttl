@@ -1,0 +1,88 @@
+
+# Exercies 1: Namespaces for rdf, xdf,foaf,fam & sim
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix fam: <http://www.ifi.uio.no/IN3060/family#> .
+@prefix sim: <http://www.ifi.uio.no/IN3060/simpsons#> .
+
+
+#Exercies 2: Instances for Homer, Marge, Lise, Bart & Maggie
+
+
+sim:Homer rdf:type foaf:Person .
+sim:Homer foaf:name "Homer Simpson" .
+sim:Homer foaf:age "36"^^xsd:int .
+
+sim:Marge rdf:type foaf:Person .#;
+sim:Marge foaf:name "Marge Simpson" .#;
+sim:Marge foaf:age "34"^^xsd:int .
+
+sim:Lisa rdf:type foaf:Person .#;
+sim:Lisa foaf:name "Lisa Simpson" .#;
+sim:Lisa foaf:age "8"^^xsd:int .
+
+sim:Bart rdf:type foaf:Person .#;
+sim:Bart foaf:name "Bart Simpson" .#;
+sim:Bart foaf:age "10"^^xsd:int .
+
+sim:Maggie rdf:type foaf:Person .#;
+sim:Maggie foaf:name "Maggie Simpson" .#;
+sim:Maggie foaf:age "1"^^xsd:int .
+
+# Exercise 3
+#The Simpsons is a family, and members of the family are Marge, Homer, Bart, Lisa and Maggie.
+
+sim:The_Simpsons rdf:type fam:Family .#;
+sim:The_ Simpons fam:hasFamilyMember  sim:Marge .#,
+sim:The_ Simpons fam:hasFamilyMember  sim:Homer .#,
+sim:The_ Simpons fam:hasFamilyMember  sim:Bart .#,
+sim:The_ Simpons fam:hasFamilyMember  sim:Lisa .#, 
+sim:The_ Simpons fam:hasFamilyMember  sim:Maggie .
+
+#Marge and Homer are married, i.e, Marge is the spouse of Homer and Homer is the spouse of Marge
+sim:Homer fam:hasSpouse sim:Marge . #,
+sim:Marge fam:hasSpouse sim:Homer .
+
+#they are respectively the mother and father to Bart, Lisa and Maggie
+sim:Bart fam:hasFather sim:Homer .#;
+sim:Lisa fam:hasFather sim:Homer .#;
+sim:Maggie fam:hasFather sim:Home .#r ;
+sim:Bart fam:hasMother sim:Marge .#;
+sim:Lisa fam:hasMother sim:Marge .#;
+sim:Maggie fam:hasMother sim:Marge .#;
+
+#Exersies 4
+# Maggie has the grandfather Abraham and the grandmother Mona
+sim:Abraham rdf:type foaf:Person .
+sim:Mona rdf:type foaf:Person .
+
+sim:Maggie fam:hasParent [
+    fam:hasFather sim:Abraham
+] .
+
+sim:Maggie fam:hasParent [
+    fam:hasMother sim:Mona
+] .
+
+# Exersies 5
+# "Lisa has the aunts Patty and Selma and the uncle Herb. Patty and Selma are sisters."
+sim:Patty rdf:type foaf:Person .
+sim:Selma rdf:type foaf:Person .
+sim:Herb rdf:type foaf:Person .
+
+sim:Lisa fam:hasParent [
+    fam:hasSister sim:Selma ;
+    fam:hasSister sim:Patty
+] .
+
+sim:Lisa fam:hasParent [
+    fam:hasBrother sim:Herb
+] .
+
+# Exercise 6
+sim:Abraham rdf:type foaf:Person .
+sim:Marge fam:hasSpouse [
+    fam:hasFather sim:Abraham
+] .
