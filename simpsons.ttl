@@ -76,5 +76,4 @@ sim:Patty fam:hasSister sim:Selma .
 sim:Selma fam:hasSister sim:Patty .
 
 # Exercise 6
-sim:Abraham rdf:type foaf:Person .
 sim:Marge fam:hasSpouse [ fam:hasFather sim:Abraham ] .
