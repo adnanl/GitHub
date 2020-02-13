@@ -9,4 +9,4 @@ WHERE  {
        {?person fam:hasFather ?parent}
 UNION  {?person fam:hasMother ?parent}
        }
-
+ORDER BY ?parent
