@@ -1,15 +1,16 @@
-	PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
-	PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-	PREFIX sim: <http://www.ifi.uio.no/INF3580/simpsons#>
-	PREFIX fam: <http://www.ifi.uio.no/INF3580/family#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX fam: <http://www.ifi.uio.no/IN3060/family#> 
+PREFIX sim: <http://www.ifi.uio.no/IN3060/simpsons#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
 	
 
-	CONSTRUCT { sim:Homer rdf:type foaf:Person.
+CONSTRUCT { sim:Homer rdf:type foaf:Person.
               ?spouse rdf:type foaf:Person .
 	            sim:Homer foaf:name ?name.
 	            sim:Homer foaf:knows ?spouse.
 	            ?spouse foaf:name ?spousename }
-	WHERE { sim:Homer fam:hasSpouse ?spouse .
+WHERE { sim:Homer fam:hasSpouse ?spouse .
 	        sim:Homer foaf:name ?name .
 	        ?spouse foaf:name ?spousename }
 
