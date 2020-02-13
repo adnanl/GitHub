@@ -3,7 +3,7 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX fam: <http://www.ifi.uio.no/IN3060/family#> 
 PREFIX sim: <http://www.ifi.uio.no/IN3060/simpsons#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
-SELECT ?person  ?name
+SELECT ?name
 WHERE  {?person rdf:type foaf:Person .
         ?person foaf:name ?name.
 FILTER regex(?name, "^M", "i").
