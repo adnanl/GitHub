@@ -7,6 +7,6 @@ SELECT ?person  ?age
 WHERE {
       {?someone rdf:type foaf:Person.
       ?someone foaf:name ?person.
-      ?person foaf:age ?age.}
+      ?someone foaf:age ?age.}
       FILTER (?age > 10)}
 ORDER BY DESC (?age)
