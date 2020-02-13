@@ -5,5 +5,5 @@ PREFIX sim: <http://www.ifi.uio.no/IN3060/simpsons#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT ?grandmother
 WHERE { sim:Maggie fam:hasParent ?parent . 
-        ?parent fam:hasMother ?grandmother . 
+        ?parent fam:hasMother ?grandmother 
       }
