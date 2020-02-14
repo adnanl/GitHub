@@ -5,12 +5,12 @@ PREFIX sim: <http://www.ifi.uio.no/IN3060/simpsons#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
 	
 
-CONSTRUCT { sim:Homer rdf:type foaf:Person.
-              ?spouse rdf:type foaf:Person .
-	            sim:Homer foaf:name ?name.
-	            sim:Homer foaf:knows ?spouse.
-	            ?spouse foaf:name ?spousename }
-WHERE { sim:Homer fam:hasSpouse ?spouse .
-	        sim:Homer foaf:name ?name .
-	        ?spouse foaf:name ?spousename }
+CONSTRUCT { 	?person rdf:type foaf:Person.
+	   	?person foaf:name "Homer"	
+          	?spouse rdf:type foaf:Person .
+	   	?spouse foaf:name ?sname
+		?person foaf:knows ?spouse }
+WHERE { ?person fam:hasSpouse ?spouse .
+	        ?person foaf:name "Homer" .
+	        ?spouse foaf:name ?sname }
 
