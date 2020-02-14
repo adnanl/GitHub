@@ -11,5 +11,4 @@ CONSTRUCT { 	sim:Homer rdf:type foaf:Person.
 	   	?spouse foaf:name ?sname.
 		sim:Homer foaf:knows ?spouse }
 WHERE { sim:Homer fam:hasSpouse ?spouse .
-	       sim:Homer foaf:name ?name.
-	        ?spouse foaf:name ?sname }
+	?spouse foaf:name ?sname }
