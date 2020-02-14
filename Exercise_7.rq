@@ -6,9 +6,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 	
 
 CONSTRUCT { 	?person rdf:type foaf:Person.
-	   	?person foaf:name "Homer"	
+	   	?person foaf:name "Homer".	
           	?spouse rdf:type foaf:Person .
-	   	?spouse foaf:name ?sname
+	   	?spouse foaf:name ?sname.
 		?person foaf:knows ?spouse }
 WHERE { ?person fam:hasSpouse ?spouse .
 	        ?person foaf:name "Homer" .
