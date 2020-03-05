@@ -6,21 +6,20 @@ PREFIX fam: <http://www.ifi.uio.no/INF3580/family#>
 CONSTRUCT {
     sim:Homer rdf:type foaf:Person ;
               foaf:name ?name ;
-              foaf:knows ?relative .
+              foaf:knows ?someone .
     
-    ?relative a foaf:Person ;
-              foaf:name ?relativename .
-}
+    ?someone rdf:type foaf:Person ;
+              foaf:name ?someone_name .}
 WHERE { 
     {
         sim:Homer foaf:name ?name .
 
-        ?relative fam:isRelativeOf sim:Homer ;
-                  foaf:name ?relativename .
+        ?someone fam:isRelativeOf sim:Homer ;
+                  foaf:name ?someone_name .
     } UNION {
-        sim:Homer fam:isRelativeOf ?relative ;
+        sim:Homer fam:isRelativeOf ?someone ;
                   foaf:name ?name .
 
-        ?relative foaf:name ?relativename .
+        ?someone foaf:name ?rsomeone_name .
     }
 }
