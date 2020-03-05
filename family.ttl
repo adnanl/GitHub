@@ -36,13 +36,16 @@ fam:hasBrother rdfs: domain foaf:Person;
 # Exercise 1.7
 
 fam:hasSibling rdfs:subPropertyOf fam:isRelativeOf .
-fam:hasSpouse rdfs:subPropertyOf fam:isRelativeOf .
-fam:hasParent rdfs:subPropertyOf fam:isRelativeOf .
-fam:hasSpouse rdfs:subPropertyOf fam:isRelativeOf .
+               rdfs: domain foaf:Person
+fam:hasSpouse rdfs:subPropertyOf fam:isRelativeOf;
+              rdfs: domain foaf:Person.
+fam:hasParent rdfs:subPropertyOf fam:isRelativeOf;
+              rdfs: domain foaf:Person
+
 
 fam:hasBrother rdfs:subPropertyOf fam:hasSibling;
                rdfs: domain foaf:Person;
-               rdfs:range fam:Mman.
+               rdfs:range fam:Man.
 
 fam:hasSister  rdfs:subPropertyOf fam:hasSibling;
                rdfs: domain foaf:Person;
