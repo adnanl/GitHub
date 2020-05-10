@@ -10,20 +10,20 @@
 @prefix ex: <http://example.com/ns#> .
 
 ex:Person[ottr:IRI ?personIRI, ! xsd:string ?name ] :: { 
-  ottr:Triple(?personIRI, rdf :type, foaf:Person), 
-  ottr:Triple(?personIRI, foaf:name, ?name) 
-  }.
+ottr:Triple(?personIRI, rdf:type, foaf:Person), 
+ottr:Triple(?personIRI, foaf:name, ?name) } .
 
 ex:Point[ottr:IRI ?locationIRI, ! xsd:decimal ?lat, ! xsd:decimal ?long, ?! xsd:string ?location] ::{
-  ottr:Triple(?locataionIRI, rdf:type, geo:Point)
-  ottr:Triple(?locataionIRI, geo:lat, ?lat)
-  ottr:Triple (?locationIRI, geo:long, ?long)
-  orrt:Triple (?locationIRI, dc:description, ?location)
-  }.
+ottr:Triple(?locationIRI, rdf:type, geo:Point),
+ottr:Triple(?locationIRI, geo:lat, ?lat),
+ottr:Triple(?locationIRI, geo:long, ?long),
+ottr:Triple(?locationIRI, dc:description, ?location) }.
 
-ex:Sculpture [ ! xsd:decimal ?lat, ! xsd:decimal ?long, ?! xsd:string ?location, ! xsd:string ?title, ?! xsd:string ?artistName, ? xsd:date ?year ] ::{
-  ottr:Triple(?sculpture rdf:type dbpo:Sculpture),
-  ex:Point(ottr:IRI ?locationIRI, ! xsd:decimal ?lat, ! xsd:decimal ?long, ?! xsd:string ?location), ottr:Triple(?sculpture dc:title ?title)
-  ex:Person(ottr:IRI ?personIRI, ! xsd:string ?name), ottr:Triple(?sculpture dc:date ?date) 
-  }  .
-
+ex:Sculpture [ ! xsd:decimal ?lat, !xsd:decimal ?long, ?! xsd:string ?location, ! xsd:string ?title, ! xsd:string ?name, ? xsd:date ?year ] :: { 
+ottr:Triple( ?sculptureIRI, rdf:type, dbpo:Sculpture), 
+ex:Point(?locationIRI, ?lat, ?long,  ?location),
+ottr:Triple( ?sculptureIRI, geo:location, ?locationIRI),
+ottr:Triple(?sculptureIRI, dc:title, ?title),
+ex:Person(?personIRI, ?name ),
+ottr:Triple(?sculptureIRI, dc:creator, ?personIRI), 
+ottr:Triple(?sculptureIRI, dc:date, ?year) } .
