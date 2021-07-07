@@ -1,0 +1,25 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX sim: <http://www.ifi.uio.no/INF3580/simpsons#>
+PREFIX fam: <http://www.ifi.uio.no/INF3580/family#>
+
+CONSTRUCT {
+    sim:Homer rdf:type foaf:Person ;
+              foaf:name ?name ;
+              foaf:knows ?someone .
+    
+    ?someone rdf:type foaf:Person ;
+              foaf:name ?someone_name .}
+WHERE { 
+    {
+        sim:Homer foaf:name ?name .
+
+        ?someone fam:isRelativeOf sim:Homer ;
+                  foaf:name ?someone_name .
+    } UNION {
+        sim:Homer fam:isRelativeOf ?someone ;
+                  foaf:name ?name .
+
+        ?someone foaf:name ?rsomeone_name .
+    }
+}

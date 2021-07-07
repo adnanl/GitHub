@@ -1,0 +1,59 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix fam: <http://www.ifi.uio.no/INF3580/family#> .
+
+# Exercise 1.2
+fam:Family rdf:type rdfs:Class .
+fam:hasFamilyMember rdf:type rdf:Property .
+fam:hasBrother rdf:type rdf:Property .
+fam:hasSister rdf:type rdf:Property .
+fam:hasParent rdf:type rdf:Property .
+fam:hasMother rdf:type rdf:Property .
+fam:hasFather rdf:type rdf:Property .
+fam:hasSpouse rdf:type rdf:Property .
+
+# Exercise 1.3
+fam:Man rdfs:type rdfs:Class .
+fam:Gender rdf:type rdfs:Class .
+fam:Woman rdfs:type rdfs:Class .
+fam:hasGender rdf:type rdf:Property .
+fam:hasSibling rdf:type rdf:Property .
+
+# Exercise 1.4
+fam:Female rdf:type fam:Gender .
+fam:Male rdf:type fam:Gender .
+
+# Exercise 1.5
+fam:isRelativeOf rdf:type rdf:Property ;
+                 rdfs:domain foaf:Person ;
+                 rdfs:range foaf:Person .
+
+# Exercise 1.6
+fam:hasBrother rdfs: domain foaf:Person;
+               rdfs:range fam:Man . 
+
+# Exercise 1.7
+
+fam:hasSibling rdfs:subPropertyOf fam:isRelativeOf .
+               rdfs: domain foaf:Person
+fam:hasSpouse rdfs:subPropertyOf fam:isRelativeOf;
+              rdfs: domain foaf:Person.
+fam:hasParent rdfs:subPropertyOf fam:isRelativeOf;
+              rdfs: domain foaf:Person
+
+
+fam:hasBrother rdfs:subPropertyOf fam:hasSibling;
+               rdfs: domain foaf:Person;
+               rdfs:range fam:Man.
+
+fam:hasSister  rdfs:subPropertyOf fam:hasSibling;
+               rdfs: domain foaf:Person;
+               rdfs:range fam:Woman.
+  
+fam:hasMother  rdfs:subPropertyOf fam:hasParent;
+               rdfs: domain foaf:Person;
+               rdfs:range fam:Woman.
+am:hasFather   rdfs:subPropertyOf fam:hasParent;
+               rdfs: domain foaf:Person;
+               rdfs:range fam:Man.
